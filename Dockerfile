@@ -1,5 +1,5 @@
-FROM postgres:latest
-MAINTAINER Cristoffer Fairweather <cfairweather@annixa.com> # Previously Ilya Stepanov <dev@ilyastepanov.com>
+FROM postgres:12.1
+MAINTAINER Andrew Rowe
 
 RUN apt-get update && \
     apt-get install -y cron && \
@@ -14,4 +14,3 @@ RUN chmod +x /start.sh
 VOLUME /dump
 
 ENTRYPOINT ["/start.sh"]
-CMD [""]
